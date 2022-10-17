@@ -1,0 +1,35 @@
+{
+  "name": "sectserver",
+  "version": "1.0.0",
+  "description": "An easy to use, fast and simple web framework for node.js with built-in template engine.",
+  "main": "sectserver.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sectly/sectserver.git"
+  },
+  "keywords": [
+    "server",
+    "http",
+    "web",
+    "rest",
+    "restful",
+    "router",
+    "api",
+    "middleware",
+    "framework",
+    "app",
+    "template",
+    "engine",
+    "view",
+    "render"
+  ],
+  "author": "sectly@sectly.online",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Sectly/sectserver/issues"
+  },
+  "homepage": "https://www.sectly.online/"
+}

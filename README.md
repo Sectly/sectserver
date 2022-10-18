@@ -1,6 +1,23 @@
 # SectServer
 ## An easy to use, fast and simple web framework for node.js with built-in template engine.
 
+`npm i sectserver`
+
+```javascript
+const sectserver = require("sectserver")
+
+var app = sectserver();
+
+app.add({
+  url: '/',
+  handler: (req, res) => {
+    res.send('Hello, World!');
+  }
+})
+
+app.listen(3000);
+```
+
 # Example:
 
 ```javascript
@@ -23,7 +40,7 @@ app.add({ // :one = required, :one? = optional
 })
 
 app.add({
-  url: '/body', // > /nody
+  url: '/body', // > /body
   handler: (req, res) => {
     res.json(`${JSON.stringify(req.body)}`);
   }
@@ -59,7 +76,7 @@ let app = sectserver();
 
 If you want, change the default configs:
 ```javascript
-app.set('template', 'pug') /* view engine */
+app.set('template', 'pug') /* view engine, see: https://www.npmjs.com/package/consolidate#supported-template-engines for a list of supported view engines | view engine defaults to: sectplating */
 .set('static dir', './public') /* static content directory (.css, .js, .json...)*/
 .set('views dir', './views'); /* views directory ( .pug, .haml, .html) */
 app.locals.foo = 'bar'; /* app.locals is an object that you can use (and call) it everywhere (middlewares, routers, renders...)*/
@@ -108,33 +125,37 @@ Its a handler for your paths. You can to nest routers on the app.
 let router = app.Router();
 
 router.add({
-        url: '/path',
+        url: '/path', // > /path
         method: 'GET',
         handler: (req,res,next) => { /* anything */}
     })
     .add({
-        url: '/path',
+        url: '/path', // > /path
         method: 'POST',
         handler: (req,res,next) => { /* anything */}
     })
     .add({
-        url: '/path',
+        url: '/path', // > /path
         method: 'PUT',
         handler: (req,res,next) => { /* anything */}
     })
     .add({
-        url: '/path',
+        url: '/path', // > /path
         method: 'DELETE',
         handler: (req,res,next) => { /* anything */}
     })
     .add({
-        url: '/path',
+        url: '/path', // > /path
         method: 'PUT',
         handler: (req,res,next) => { /* anything */}
     })
     .add({
-        url: '/user/:id',
+        url: '/user/:id', // > /user/48
         handler: (req,res,next) => { /* req.params.id */}
+    })
+    .add({
+        url: '/asset/', // > /asset?name=logo.png&from=images
+        handler: (req,res,next) => { /* req.query.name, req.query.from */}
     })
 
 /* incorpore to your app */

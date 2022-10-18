@@ -1,7 +1,8 @@
 {
   "name": "sectserver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An easy to use, fast and simple web framework for node.js with built-in template engine.",
+  "author": "sectly@sectly.online",
   "main": "sectserver.js",
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
@@ -26,7 +27,12 @@
     "view",
     "render"
   ],
-  "author": "sectly@sectly.online",
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "consolidate": "^0.16.0",
+    "logcon": "^1.0.6",
+    "node-fetch": "^3.2.6"
+  },
   "license": "MPL-2.0",
   "bugs": {
     "url": "https://github.com/Sectly/sectserver/issues"

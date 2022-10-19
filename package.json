@@ -1,6 +1,6 @@
 {
   "name": "sectserver",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An easy to use, fast and simple web framework for node.js with built-in template engine.",
   "author": "sectly@sectly.online",
   "main": "sectserver.js",

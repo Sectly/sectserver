@@ -8,6 +8,9 @@ const sectserver = require("sectserver")
 
 var app = sectserver();
 
+app.set('static dir', __dirname + '/public');
+app.set('views dir', __dirname + '/views');
+
 app.add({
   url: '/',
   handler: (req, res) => {
@@ -24,6 +27,9 @@ app.listen(3000);
 const sectserver = require("sectserver")
 
 var app = sectserver();
+
+app.set('static dir', __dirname + '/public');
+app.set('views dir', __dirname + '/views');
 
 app.add({
   url: '/',
